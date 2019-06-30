@@ -1,4 +1,4 @@
-package com.kodiilla.testing.collection;
+package com.kodilla.testing.collection;
 
 import org.junit.*;
 
@@ -27,7 +27,7 @@ public class CollectionTestSuite {
         //Given
         OddNumbersExterminator exterminator = new OddNumbersExterminator();
         //When
-        ArrayList <Integer> list = new ArrayList<>();
+        ArrayList<Integer> list = new ArrayList<>();
         int i = 0;
         while(i<20){
             list.add(i);
@@ -41,7 +41,7 @@ public class CollectionTestSuite {
     public void testOddNumbersExterminatorEmptyList(){
         //Given
         OddNumbersExterminator exterminator2 = new OddNumbersExterminator();
-       //When
+        //When
         ArrayList <Integer> list2 = new ArrayList<>();
         //Then
         exterminator2.exterminate(list2);
