@@ -34,7 +34,8 @@ public class CollectionTestSuite {
             i++;
         }
         //Then
-        exterminator.exterminate(list);
+        ArrayList<Integer> result = exterminator.exterminate(list);
+        System.out.println("When add only even numbers: " + result);
     }
 
     @Test
@@ -44,6 +45,7 @@ public class CollectionTestSuite {
         //When
         ArrayList <Integer> list2 = new ArrayList<>();
         //Then
-        exterminator2.exterminate(list2);
+        ArrayList<Integer> result2 = exterminator2.exterminate(list2);
+        System.out.println("when laist is empty: " + result2);
     }
 }
