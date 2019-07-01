@@ -11,7 +11,7 @@ public class CollectionTestSuite {
     }
     @AfterClass
     public static void afterClass(){
-        System.out.println("Testing code ended succesfully.");
+        System.out.println("Testing code ended.");
     }
 
     @Before
@@ -20,7 +20,7 @@ public class CollectionTestSuite {
     }
     @After
     public void after(){
-        System.out.println("Test edned succesfully.");
+        System.out.println("Test edned.");
     }
     @Test
     public void testOddNumbersExterminatorNormalList(){
@@ -35,7 +35,8 @@ public class CollectionTestSuite {
         }
         //Then
         ArrayList<Integer> result = exterminator.exterminate(list);
-        System.out.println("When add only even numbers: " + result);
+        Assert.assertNotEquals(list,result);
+        Assert.assertEquals(10, result.size());
     }
 
     @Test
@@ -46,6 +47,6 @@ public class CollectionTestSuite {
         ArrayList <Integer> list2 = new ArrayList<>();
         //Then
         ArrayList<Integer> result2 = exterminator2.exterminate(list2);
-        System.out.println("when laist is empty: " + result2);
+        Assert.assertEquals(0,result2.size());
     }
 }

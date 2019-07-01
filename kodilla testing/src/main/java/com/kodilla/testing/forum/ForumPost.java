@@ -3,7 +3,6 @@ package com.kodilla.testing.forum;
 import java.util.Objects;
 
 public class ForumPost {
-    public class ForumPost {
         String postBody;
         String author;
 
@@ -38,3 +37,5 @@ public class ForumPost {
         }
 
     }
+
+
