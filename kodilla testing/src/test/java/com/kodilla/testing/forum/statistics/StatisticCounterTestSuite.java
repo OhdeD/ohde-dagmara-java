@@ -45,18 +45,19 @@ public class StatisticCounterTestSuite {
         when(statisticsMock.usersNames()).thenReturn(usersNames);
         when(statisticsMock.postsCount()).thenReturn ( 137 );
         when(statisticsMock.commentsCount()).thenReturn ( 283);
-        StatisticsCounter statistic = new StatisticsCounter(statisticsMock);
+        StatisticsCounter statistics = new StatisticsCounter(statisticsMock);
 
         //When
-        double numberOfUsers = usersNames.size();
-        double postsAmount =statisticsMock.postsCount();
-        double commentsAmount = statisticsMock.commentsCount();
-        statistic.calculateAdvStatistics(statisticsMock);
-        double avrgPostsAmountPerUser = statistic.getAvrgPostsAmountPerUser();
-        double avrgCommentsAmountPerUser = statistic.getAvrgCommentsAmountPerUser();
-        double avrgCommentsAmountPerPost = statistic.getAvrgCommentsAmountPerPost();
+        statistics.calculateAdvStatistics(statisticsMock);
 
         //Then
+        double numberOfUsers = statistics.getUsersAmount();
+        double postsAmount =statistics.getPostsAmount();
+        double commentsAmount = statistics.getCommentsAmount();
+        double avrgPostsAmountPerUser = statistics.getAvrgPostsAmountPerUser();
+        double avrgCommentsAmountPerUser = statistics.getAvrgCommentsAmountPerUser();
+        double avrgCommentsAmountPerPost = statistics.getAvrgCommentsAmountPerPost();
+
         assertEquals(100, numberOfUsers, 0);
         assertEquals(137, postsAmount, 0);
         assertEquals(283, commentsAmount, 0);
@@ -75,18 +76,19 @@ public class StatisticCounterTestSuite {
         when(statisticsMock.usersNames()).thenReturn(usersNames);
         when(statisticsMock.postsCount()).thenReturn ( 137 );
         when(statisticsMock.commentsCount()).thenReturn ( 283);
-        StatisticsCounter statistic = new StatisticsCounter(statisticsMock);
+        StatisticsCounter statistics = new StatisticsCounter(statisticsMock);
 
         //When
-        double numberOfUsers = usersNames.size();
-        double postsAmount =statisticsMock.postsCount();
-        double commentsAmount = statisticsMock.commentsCount();
-        statistic.calculateAdvStatistics(statisticsMock);
-        double avrgPostsAmountPerUser = statistic.getAvrgPostsAmountPerUser();
-        double avrgCommentsAmountPerUser = statistic.getAvrgCommentsAmountPerUser();
-        double avrgCommentsAmountPerPost = statistic.getAvrgCommentsAmountPerPost();
+        statistics.calculateAdvStatistics(statisticsMock);
 
         //Then
+        double numberOfUsers = statistics.getUsersAmount();
+        double postsAmount =statistics.getPostsAmount();
+        double commentsAmount = statistics.getCommentsAmount();
+        double avrgPostsAmountPerUser = statistics.getAvrgPostsAmountPerUser();
+        double avrgCommentsAmountPerUser = statistics.getAvrgCommentsAmountPerUser();
+        double avrgCommentsAmountPerPost = statistics.getAvrgCommentsAmountPerPost();
+
         assertEquals(0, numberOfUsers, 0);
         assertEquals(137, postsAmount, 0);
         assertEquals(283, commentsAmount, 0);
@@ -108,18 +110,19 @@ public class StatisticCounterTestSuite {
         when(statisticsMock.usersNames()).thenReturn(usersNames);
         when(statisticsMock.postsCount()).thenReturn ( 0 );
         when(statisticsMock.commentsCount()).thenReturn ( 483);
-        StatisticsCounter statistic = new StatisticsCounter(statisticsMock);
+        StatisticsCounter statistics = new StatisticsCounter(statisticsMock);
 
         //When
-        double numberOfUsers = usersNames.size();
-        double postsAmount =statisticsMock.postsCount();
-        double commentsAmount = statisticsMock.commentsCount();
-        statistic.calculateAdvStatistics(statisticsMock);
-        double avrgPostsAmountPerUser = statistic.getAvrgPostsAmountPerUser();
-        double avrgCommentsAmountPerUser = statistic.getAvrgCommentsAmountPerUser();
-        double avrgCommentsAmountPerPost = statistic.getAvrgCommentsAmountPerPost();
+        statistics.calculateAdvStatistics(statisticsMock);
 
         //Then
+        double numberOfUsers = statistics.getUsersAmount();
+        double postsAmount =statistics.getPostsAmount();
+        double commentsAmount = statistics.getCommentsAmount();
+        double avrgPostsAmountPerUser = statistics.getAvrgPostsAmountPerUser();
+        double avrgCommentsAmountPerUser = statistics.getAvrgCommentsAmountPerUser();
+        double avrgCommentsAmountPerPost = statistics.getAvrgCommentsAmountPerPost();
+
         assertEquals(300, numberOfUsers, 0);
         assertEquals(0, postsAmount, 0);
         assertEquals(483, commentsAmount, 0);
@@ -141,18 +144,19 @@ public class StatisticCounterTestSuite {
         when(statisticsMock.usersNames()).thenReturn(usersNames);
         when(statisticsMock.postsCount()).thenReturn ( 1000 );
         when(statisticsMock.commentsCount()).thenReturn ( 483);
-        StatisticsCounter statistic = new StatisticsCounter(statisticsMock);
+        StatisticsCounter statistics = new StatisticsCounter(statisticsMock);
 
         //When
-        double numberOfUsers = usersNames.size();
-        double postsAmount =statisticsMock.postsCount();
-        double commentsAmount = statisticsMock.commentsCount();
-        statistic.calculateAdvStatistics(statisticsMock);
-        double avrgPostsAmountPerUser = statistic.getAvrgPostsAmountPerUser();
-        double avrgCommentsAmountPerUser = statistic.getAvrgCommentsAmountPerUser();
-        double avrgCommentsAmountPerPost = statistic.getAvrgCommentsAmountPerPost();
+        statistics.calculateAdvStatistics(statisticsMock);
 
         //Then
+        double numberOfUsers = statistics.getUsersAmount();
+        double postsAmount =statistics.getPostsAmount();
+        double commentsAmount = statistics.getCommentsAmount();
+        double avrgPostsAmountPerUser = statistics.getAvrgPostsAmountPerUser();
+        double avrgCommentsAmountPerUser = statistics.getAvrgCommentsAmountPerUser();
+        double avrgCommentsAmountPerPost = statistics.getAvrgCommentsAmountPerPost();
+
         assertEquals(300, numberOfUsers, 0);
         assertEquals(1000, postsAmount, 0);
         assertEquals(483, commentsAmount, 0);
@@ -174,18 +178,19 @@ public class StatisticCounterTestSuite {
         when(statisticsMock.usersNames()).thenReturn(usersNames);
         when(statisticsMock.postsCount()).thenReturn ( 150 );
         when(statisticsMock.commentsCount()).thenReturn ( 0);
-        StatisticsCounter statistic = new StatisticsCounter(statisticsMock);
+        StatisticsCounter statistics = new StatisticsCounter(statisticsMock);
 
         //When
-        double numberOfUsers = usersNames.size();
-        double postsAmount =statisticsMock.postsCount();
-        double commentsAmount = statisticsMock.commentsCount();
-        statistic.calculateAdvStatistics(statisticsMock);
-        double avrgPostsAmountPerUser = statistic.getAvrgPostsAmountPerUser();
-        double avrgCommentsAmountPerUser = statistic.getAvrgCommentsAmountPerUser();
-        double avrgCommentsAmountPerPost = statistic.getAvrgCommentsAmountPerPost();
+        statistics.calculateAdvStatistics(statisticsMock);
 
         //Then
+        double numberOfUsers = statistics.getUsersAmount();
+        double postsAmount =statistics.getPostsAmount();
+        double commentsAmount = statistics.getCommentsAmount();
+        double avrgPostsAmountPerUser = statistics.getAvrgPostsAmountPerUser();
+        double avrgCommentsAmountPerUser = statistics.getAvrgCommentsAmountPerUser();
+        double avrgCommentsAmountPerPost = statistics.getAvrgCommentsAmountPerPost();
+
         assertEquals(300, numberOfUsers, 0);
         assertEquals(150, postsAmount, 0);
         assertEquals(0, commentsAmount, 0);
@@ -207,18 +212,19 @@ public class StatisticCounterTestSuite {
         when(statisticsMock.usersNames()).thenReturn(usersNames);
         when(statisticsMock.postsCount()).thenReturn ( 150 );
         when(statisticsMock.commentsCount()).thenReturn ( 50);
-        StatisticsCounter statistic = new StatisticsCounter(statisticsMock);
+        StatisticsCounter statistics = new StatisticsCounter(statisticsMock);
 
         //When
-        double numberOfUsers = usersNames.size();
-        double postsAmount =statisticsMock.postsCount();
-        double commentsAmount = statisticsMock.commentsCount();
-        statistic.calculateAdvStatistics(statisticsMock);
-        double avrgPostsAmountPerUser = statistic.getAvrgPostsAmountPerUser();
-        double avrgCommentsAmountPerUser = statistic.getAvrgCommentsAmountPerUser();
-        double avrgCommentsAmountPerPost = statistic.getAvrgCommentsAmountPerPost();
+        statistics.calculateAdvStatistics(statisticsMock);
 
         //Then
+        double numberOfUsers = statistics.getUsersAmount();
+        double postsAmount =statistics.getPostsAmount();
+        double commentsAmount = statistics.getCommentsAmount();
+        double avrgPostsAmountPerUser = statistics.getAvrgPostsAmountPerUser();
+        double avrgCommentsAmountPerUser = statistics.getAvrgCommentsAmountPerUser();
+        double avrgCommentsAmountPerPost = statistics.getAvrgCommentsAmountPerPost();
+
         assertEquals(300, numberOfUsers, 0);
         assertEquals(150, postsAmount, 0);
         assertEquals(50, commentsAmount, 0);
@@ -240,18 +246,19 @@ public class StatisticCounterTestSuite {
         when(statisticsMock.usersNames()).thenReturn(usersNames);
         when(statisticsMock.postsCount()).thenReturn ( 150 );
         when(statisticsMock.commentsCount()).thenReturn ( 500);
-        StatisticsCounter statistic = new StatisticsCounter(statisticsMock);
+        StatisticsCounter statistics = new StatisticsCounter(statisticsMock);
 
         //When
-        double numberOfUsers = usersNames.size();
-        double postsAmount =statisticsMock.postsCount();
-        double commentsAmount = statisticsMock.commentsCount();
-        statistic.calculateAdvStatistics(statisticsMock);
-        double avrgPostsAmountPerUser = statistic.getAvrgPostsAmountPerUser();
-        double avrgCommentsAmountPerUser = statistic.getAvrgCommentsAmountPerUser();
-        double avrgCommentsAmountPerPost = statistic.getAvrgCommentsAmountPerPost();
+        statistics.calculateAdvStatistics(statisticsMock);
 
         //Then
+        double numberOfUsers = statistics.getUsersAmount();
+        double postsAmount =statistics.getPostsAmount();
+        double commentsAmount = statistics.getCommentsAmount();
+        double avrgPostsAmountPerUser = statistics.getAvrgPostsAmountPerUser();
+        double avrgCommentsAmountPerUser = statistics.getAvrgCommentsAmountPerUser();
+        double avrgCommentsAmountPerPost = statistics.getAvrgCommentsAmountPerPost();
+
         assertEquals(300, numberOfUsers, 0);
         assertEquals(150, postsAmount, 0);
         assertEquals(500, commentsAmount, 0);
