@@ -48,7 +48,7 @@ public class StatisticCounterTestSuite {
         StatisticsCounter statistics = new StatisticsCounter(statisticsMock);
 
         //When
-        statistics.calculateAdvStatistics(statisticsMock);
+        statistics.calculateAdvStatistics(statisticsMock); statistics.calculateAdvStatistics(statisticsMock);
 
         //Then
         double numberOfUsers = statistics.getUsersAmount();
@@ -262,7 +262,6 @@ public class StatisticCounterTestSuite {
         assertEquals(300, numberOfUsers, 0);
         assertEquals(150, postsAmount, 0);
         assertEquals(500, commentsAmount, 0);
-
         assertEquals(0.5, avrgPostsAmountPerUser, 0.01);
         assertEquals(1.66, avrgCommentsAmountPerUser, 0.01);
         assertEquals(3.33,  avrgCommentsAmountPerPost, 0.01);
