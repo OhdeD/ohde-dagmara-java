@@ -5,6 +5,7 @@ import java.util.Scanner;
 
 public class RpsRunner {
     public static void main(String[] args) {
+        Responds responds = new Responds();
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter Your name: ");
 
@@ -12,11 +13,9 @@ public class RpsRunner {
 
         System.out.println("Hi " + name.toUpperCase() + "! Let's play Rock-Paper-Scissors!\n");
         System.out.println("Up to how many wins do You wanna play " + name.toUpperCase() + "?");
-
         int wonRounds = scanner.nextInt();
 
-        System.out.println("OK! Let me tell You how to play. \n\n Rock beats Scissors, Scissors beats Paper and the Paper beats Rock.\n \n Now, if You wanna choose: \n - Rock: press \"1\", \n - Paper: press \"2\", \n - Scissors: press \"3\". ");
-        System.out.println("\"n\" \"n\" To escape press \"8\". \n For restart press \"9\". To check current score press \"0\". \n\n OK! Good luck! ");
+        responds.rules();
 
         Random game = new Random();
 
@@ -32,40 +31,21 @@ public class RpsRunner {
             int computerMove = game.nextInt(2) + 1;
 
             if (playerMove == computerMove) {
-                System.out.println("It's a tie! Let's see who wins this time...");
-                System.out.println("What's Your next move?");
+               endGame=responds.tie();
             } else {
 
                 if (playerMove == 1) {
                     if (computerMove == 2) {
                         computerScore++;
-                        System.out.println("I gived " + computerMove + ".");
+                        System.out.println("I gaved " + computerMove + ".");
                         System.out.println("Paper beats the Rock! This time I won.");
-                        if (playerScore == wonRounds) {
-                            System.out.println("CONGRATULATIONS! YOU WON! YOU ARE THE BEST!");
-                            endGame = true;
-                        }
-                        if (computerScore == wonRounds) {
-                            System.out.println("This game is mine. Sorry, You lost.");
-                            endGame = true;
-                        } else {
-                            System.out.println("What's Your next move?");
-                        }
+                        endGame = responds.whoWins(playerScore, computerScore, wonRounds);
 
                     } else {
                         playerScore++;
                         System.out.println("I gived " + computerMove + ".");
                         System.out.println("Congrats! You won this round! Rock beats the Scissors! :)");
-                        if (playerScore == wonRounds) {
-                            System.out.println("CONGRATULATIONS! YOU WON! YOU ARE THE BEST!");
-                            endGame = true;
-                        }
-                        if (computerScore == wonRounds) {
-                            System.out.println("This game is mine. Sorry, You lost.");
-                            endGame = true;
-                        } else {
-                            System.out.println("What's Your next move?");
-                        }
+                        endGame = responds.whoWins(playerScore, computerScore, wonRounds);
 
                     }
                 }
@@ -74,32 +54,14 @@ public class RpsRunner {
                         playerScore++;
                         System.out.println("I gived " + computerMove + ".");
                         System.out.println("Congrats! You won this round! Paper beats the Rock! :)");
-                        if (playerScore == wonRounds) {
-                            System.out.println("CONGRATULATIONS! YOU WON! YOU ARE THE BEST!");
-                            endGame = true;
-                        }
-                        if (computerScore == wonRounds) {
-                            System.out.println("This game is mine. Sorry, You lost.");
-                            endGame = true;
-                        } else {
-                            System.out.println("What's Your next move?");
-                        }
+                        endGame = responds.whoWins(playerScore, computerScore, wonRounds);
 
                     } else {
                         computerScore++;
 
                         System.out.println("I gived " + computerMove + ".");
                         System.out.println("Scissors beats the Paper! This time You lost.");
-                        if (playerScore == wonRounds) {
-                            System.out.println("CONGRATULATIONS! YOU WON! YOU ARE THE BEST!");
-                            endGame = true;
-                        }
-                        if (computerScore == wonRounds) {
-                            System.out.println("This game is mine. Sorry, You lost.");
-                            endGame = true;
-                        } else {
-                            System.out.println("What's Your next move?");
-                        }
+                        endGame = responds.whoWins(playerScore, computerScore, wonRounds);
 
                     }
                 }
@@ -108,37 +70,19 @@ public class RpsRunner {
                         computerScore++;
                         System.out.println("I gived " + computerMove + ".");
                         System.out.println("Rock beats the Scissors! This time I won.");
-                        if (playerScore == wonRounds) {
-                            System.out.println("CONGRATULATIONS! YOU WON! YOU ARE THE BEST!");
-                            endGame = true;
-                        }
-                        if (computerScore == wonRounds) {
-                            System.out.println("This game is mine. Sorry, You lost.");
-                            endGame = true;
-                        } else {
-                            System.out.println("What's Your next move?");
-                        }
+                        endGame = responds.whoWins(playerScore, computerScore, wonRounds);
 
                     } else {
                         playerScore++;
                         System.out.println("I gived " + computerMove + ".");
                         System.out.println("Yep, You won this one! Scissors beats the Paper! :)");
-                        if (playerScore == wonRounds) {
-                            System.out.println("CONGRATULATIONS! YOU WON! YOU ARE THE BEST!");
-                            endGame = true;
-                        }
-                        if (computerScore == wonRounds) {
-                            System.out.println("This game is mine. Sorry, You lost.");
-                            endGame = true;
-                        } else {
-                            System.out.println("What's Your next move?");
-                        }
+                        endGame = responds.whoWins(playerScore, computerScore, wonRounds);
 
                     }
                 }
             }
             if (playerMove == 8) {
-                System.out.println("If You really want to quit, press \"x\" again. Otherwise press anything else.");
+                System.out.println("If You really want to quit, press \"8\" again. Otherwise press anything else.");
                 int quit = scanner.nextInt();
                 if (quit == 8) {
                     System.out.println("Thanks for Playing. See You another time. :) ");
