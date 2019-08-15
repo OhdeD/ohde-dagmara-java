@@ -17,28 +17,29 @@ public class Responds {
                 "\n\n OK! Good luck! \n\n");
     }
 
-    public boolean whoWins(int playerScore, int computerScore, int wonRounds){
-        System.out.println("\nEND OF THE GAME\n");
+    public boolean whoWins(int playerScore, int computerScore, int wonRounds) {
         if (playerScore == wonRounds) {
-            Random random  = new Random();
+            Random random = new Random();
             int n = random.nextInt(100);
-            if (n<34) {
+            if (n < 34) {
                 System.out.println("CONGRATULATIONS! YOU WON! YOU ARE THE BEST!");
-            }if (34<< n <= 67){
+            }
+            if (34 << n <= 67) {
                 System.out.println("YOU WON! CONGRATULATIONS!");
-            }else {
+            } else {
                 System.out.println("AND THE WINNER IS.... YOU!!!");
             }
             return true;
         }
         if (computerScore == wonRounds) {
-            Random random  = new Random();
+            Random random = new Random();
             int n = random.nextInt(100);
-            if (n<34) {
+            if (n < 34) {
                 System.out.println("This game is mine. Sorry, You lost.");
-            }if ( n< 67 & n>33){
+            }
+            if (n < 67 & n > 33) {
                 System.out.println("Not this time.. I'm the winner.");
-            }else {
+            } else {
                 System.out.println("Maybe next time You'll beat me ;).");
             }
             return true;
@@ -48,7 +49,7 @@ public class Responds {
         }
     }
 
-    public boolean tie(){
+    public boolean tie() {
         System.out.println("It's a tie! Let's see who wins this time...");
         System.out.println("What's Your next move?");
         return false;

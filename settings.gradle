@@ -9,4 +9,5 @@ include 'kodilla-stream'
 include 'kodilla-rpm'
 include 'kodilla-exception'
 include 'HIVE'
+include 'kodilla-good-patterns'
 
