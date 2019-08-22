@@ -1,4 +1,4 @@
-package com.kodilla.good.patterns.challenges.purchaseService;
+package com.kodilla.good.patterns.challenges;
 
 public class ObjectsToBuy {
     private int quantity;

@@ -1,10 +1,10 @@
-package com.kodilla.good.patterns.challenges.purchaseService;
+package com.kodilla.good.patterns.challenges;
 
-public class OrderRequest {
+public class OrderRequest   {
     private User user;
     private ObjectsToBuy objectsToBuy;
 
-    public OrderRequest(User user, ObjectsToBuy objectsToBuy) {
+    public OrderRequest (User user, ObjectsToBuy objectsToBuy) {
         this.user = user;
         this.objectsToBuy = objectsToBuy;
     }
