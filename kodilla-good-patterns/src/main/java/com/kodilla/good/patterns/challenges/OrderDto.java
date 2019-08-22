@@ -1,10 +1,10 @@
 package com.kodilla.good.patterns.challenges;
 
-public class RentalDto {
+public class OrderDto {
     private User user;
     private boolean complete;
 
-    public RentalDto(User user, boolean complete) {
+    public OrderDto(User user, boolean complete) {
         this.user = user;
         this.complete = complete;
     }

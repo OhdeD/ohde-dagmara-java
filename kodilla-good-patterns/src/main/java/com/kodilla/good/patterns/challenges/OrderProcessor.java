@@ -14,15 +14,15 @@ public class OrderProcessor  {
         this.orderRepository = orderRepository;
     }
 
-    public RentalDto process(OrderRequest orderRequest) {
-        boolean isRented = orderService.orderProcessing(orderRequest);
+    public OrderDto process(OrderRequest orderRequest) {
+        boolean isOrdered = orderService.orderProcessing(orderRequest);
 
-        if(isRented) {
+        if(isOrdered) {
             informationService.inform(orderRequest.getUser());
             orderRepository.addOrderToRepository(orderRequest.getUser(), orderRequest.getObjectsToBuy());
-            return new RentalDto(orderRequest.getUser(), true);
+            return new OrderDto(orderRequest.getUser(), true);
         } else {
-            return new RentalDto(orderRequest.getUser(), false);
+            return new OrderDto(orderRequest.getUser(), false);
         }
     }
 }
