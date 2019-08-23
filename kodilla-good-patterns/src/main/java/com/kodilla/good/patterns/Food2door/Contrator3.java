@@ -1,13 +1,13 @@
 package com.kodilla.good.patterns.Food2door;
 
-public class Contractor2 implements Contractor {
+public class Contrator3 implements Contractor{
     private String name;
     private String product;
     private int amount;
     private String mail;
     private MailRequest mailRequest;
 
-    public Contractor2(String name, String product, int amount, String mail) {
+    public Contrator3 (String name, String product, int amount, String mail) {
         this.name = name;
         this.product = product;
         this.amount = amount;
@@ -16,9 +16,11 @@ public class Contractor2 implements Contractor {
 
     @Override
     public boolean process(RequestMaker requestMaker) {
-        System.out.println("makeing order and paying up-Front");
-        return requestMaker.send(mail, product, amount);
-
+        System.out.println("Asking if available ");
+        boolean canComplite =requestMaker.send(mail, product, amount);
+        System.out.println("Getting confirmation about time of delivery ");
+        System.out.println("If delivery is possible on time return true, if not false");
+        return canComplite;
     }
 
     @Override

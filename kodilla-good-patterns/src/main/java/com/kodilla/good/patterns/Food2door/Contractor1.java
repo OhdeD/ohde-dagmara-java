@@ -30,4 +30,24 @@ public class Contractor1 implements Contractor {
     public MailRequest getRequestMaker() {
         return mailRequest;
     }
+
+    @Override
+    public String getName() {
+        return name;
+    }
+
+    @Override
+    public String getProduct() {
+        return product;
+    }
+
+    @Override
+    public String getContact() {
+        return mail;
+    }
+
+    @Override
+    public int getAmount() {
+        return amount;
+    }
 }
