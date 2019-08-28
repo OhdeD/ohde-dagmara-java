@@ -11,4 +11,6 @@ include 'kodilla-exception'
 include 'HIVE'
 include 'kodilla-good-patterns'
 include 'kodilla-spring'
+include 'kodilla-patterns'
+include 'kodilla-patterns'
 
