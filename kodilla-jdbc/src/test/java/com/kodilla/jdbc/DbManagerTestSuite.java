@@ -51,7 +51,7 @@ public class DbManagerTestSuite {
                 "from USERS U join POSTS P on U.ID = P.USER_ID\n" +
                 "group by U.LASTNAME\n" +
                 "having POSTS_ADDED >1";
-        Statement statement = dbManager.getConnection().createStatement();
+        Statement statement =dbManager.getConnection().createStatement();
         ResultSet resultSet = statement.executeQuery(sqlQuery);
         //Then
         int i = 0;
