@@ -6,10 +6,9 @@ public class Application {
     public static void main(String[] args) {
         boolean gameFinished = false;
 
-        while (gameFinished == false) {
+        while (!gameFinished) {
             SudokuGame theGame = new SudokuGame();
             gameFinished = theGame.resolveSudoku();
-
 
             if (gameFinished) {
                 SudokuBoard sudokuBoard = new SudokuBoard();
@@ -17,13 +16,14 @@ public class Application {
                 System.out.println(sudokuBoard);
                 EnterCoordinates enter = new EnterCoordinates();
                 AddElement addElement = new AddElement(sudokuBoard);
+                EndGameControler endGameControler = new EndGameControler(sudokuBoard);
 
-                enter.nextmove();
-                addElement.add(enter.getX(), enter.getY(), enter.getValue());
+                while (!endGameControler.isEndGame()) {
+                    enter.nextmove(sudokuBoard);
+                    addElement.add(enter.getX(), enter.getY(), enter.getValue());
+                }
             }
         }
     }
-
-
 }
 

@@ -17,12 +17,21 @@ public class SudokuElement {
         }
     }
 
+    public List<Integer> getPossibilities() {
+        return possibilities;
+    }
+
+    public int getValue() {
+        return value;
+    }
+
     public void setValue(int value) {
         this.value = value;
     }
 
-    public List<Integer> getPossibilities() {
-        return possibilities;
+    public void setPossibilities(List<Integer> newPossibilities) {
+        this.possibilities.clear();
+        this.possibilities = newPossibilities;
     }
 
     @Override
