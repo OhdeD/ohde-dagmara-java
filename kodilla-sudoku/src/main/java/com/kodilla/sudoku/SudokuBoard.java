@@ -8,10 +8,6 @@ import static com.kodilla.sudoku.SudokuElement.EMPTY;
 public class SudokuBoard {
     private List<SudokuRow> board = new ArrayList<>();
 
-    public void addRow(SudokuRow row) {
-        board.add(row);
-    }
-
     public List<SudokuRow> setEmptyBoard() {
         for (int i = 1; i < 10; i++) {
             SudokuRow row = new SudokuRow();
@@ -23,11 +19,6 @@ public class SudokuBoard {
         return board;
     }
 
-    public void showRow() {
-
-        System.out.println(board);
-    }
-
     @Override
     public String toString() {
         String a = "";
@@ -36,5 +27,9 @@ public class SudokuBoard {
         }
         return a;
 
+    }
+
+    public List<SudokuRow> getBoard() {
+        return board;
     }
 }

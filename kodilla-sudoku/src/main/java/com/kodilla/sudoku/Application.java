@@ -10,15 +10,17 @@ public class Application {
             SudokuGame theGame = new SudokuGame();
             gameFinished = theGame.resolveSudoku();
 
-        }
-        if (gameFinished) {
 
-            SudokuBoard sudokuBoard = new SudokuBoard();
-            sudokuBoard.setEmptyBoard();
-            System.out.println(sudokuBoard);
+            if (gameFinished) {
+                SudokuBoard sudokuBoard = new SudokuBoard();
+                sudokuBoard.setEmptyBoard();
+                System.out.println(sudokuBoard);
+                EnterCoordinates enter = new EnterCoordinates();
+                AddElement addElement = new AddElement(sudokuBoard);
 
-        } else {
-            System.out.println("dupa");
+                enter.nextmove();
+                addElement.add(enter.getX(), enter.getY(), enter.getValue());
+            }
         }
     }
 
