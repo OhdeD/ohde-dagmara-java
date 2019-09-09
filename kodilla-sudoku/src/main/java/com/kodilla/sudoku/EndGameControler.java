@@ -6,7 +6,8 @@ public class EndGameControler {
     public EndGameControler(SudokuBoard board) {
         this.board = board;
     }
-    public boolean isEndGame(){
+
+    public boolean isEndGame() {
         boolean isEndGame = board.getBoard()
                 .stream()
                 .flatMap(e->e.getRow().stream())

@@ -1,7 +1,5 @@
 package com.kodilla.sudoku;
 
-import java.util.Scanner;
-
 public class Application {
     public static void main(String[] args) {
         boolean gameFinished = false;
@@ -12,7 +10,7 @@ public class Application {
 
             if (gameFinished) {
                 SudokuBoard sudokuBoard = new SudokuBoard();
-                sudokuBoard.setEmptyBoard();
+                sudokuBoard.setEasyBoard();
                 System.out.println(sudokuBoard);
                 EnterCoordinates enter = new EnterCoordinates();
                 AddElement addElement = new AddElement(sudokuBoard);
@@ -20,7 +18,7 @@ public class Application {
 
                 while (!endGameControler.isEndGame()) {
                     enter.nextmove(sudokuBoard);
-                    addElement.add(enter.getX(), enter.getY(), enter.getValue());
+                    addElement.addElement(enter.getX(), enter.getY(), enter.getValue());
                 }
             }
         }
