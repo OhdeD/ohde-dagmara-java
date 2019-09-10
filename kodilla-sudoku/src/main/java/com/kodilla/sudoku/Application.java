@@ -10,7 +10,8 @@ public class Application {
 
             if (gameFinished) {
                 SudokuBoard sudokuBoard = new SudokuBoard();
-                sudokuBoard.setEasyBoard();
+                EasySet easySet = new EasySet();
+                easySet.setEasyBoard(sudokuBoard);
                 System.out.println(sudokuBoard);
                 EnterCoordinates enter = new EnterCoordinates();
                 AddElement addElement = new AddElement(sudokuBoard);
@@ -18,7 +19,7 @@ public class Application {
 
                 while (!endGameControler.isEndGame()) {
                     enter.nextmove(sudokuBoard);
-                    addElement.addElement(enter.getX(), enter.getY(), enter.getValue());
+                    addElement.add(enter.getX(), enter.getY(), enter.getValue());
                 }
             }
         }
