@@ -32,9 +32,5 @@ public class AddElement {
         }
         CheckBoxes checkBoxes = new CheckBoxes(sudokuBoard);
         checkBoxes.check(x,y,value);
-
-        System.out.println(sudokuBoard);
-        System.out.println(value + " was added to board.");
-
     }
 }

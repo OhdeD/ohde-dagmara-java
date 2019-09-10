@@ -20,6 +20,8 @@ public class Application {
                 while (!endGameControler.isEndGame()) {
                     enter.nextmove(sudokuBoard);
                     addElement.add(enter.getX(), enter.getY(), enter.getValue());
+                    System.out.println(sudokuBoard);
+                    System.out.println(enter.getValue() + " was added to board.");
                 }
             }
         }

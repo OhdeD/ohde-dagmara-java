@@ -46,6 +46,7 @@ public class SudokuResolve {
                 GuessNumber guessNumber = new GuessNumber(board);
                 anyOperation = guessNumber.guess();
             }
+            System.out.println(board);
         }
 
     }
