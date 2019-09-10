@@ -10,7 +10,7 @@ public class SudokuTestSuite {
         SudokuBoard board = new SudokuBoard();
         board.setEmptyBoard();
         AddElement addElement = new AddElement(board);
-addElement.addElement(2,2,5);
+        addElement.add(2, 2, 5);
 
         EndGameControler endGameControler = new EndGameControler(board);
         //When
