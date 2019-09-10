@@ -2,26 +2,27 @@ package com.kodilla.sudoku;
 
 public class Application {
     public static void main(String[] args) {
-        boolean gameFinished = false;
-
-        while (!gameFinished) {
+        boolean gameNotFinished = true;
+        while (gameNotFinished) {
             SudokuGame theGame = new SudokuGame();
-            gameFinished = theGame.resolveSudoku();
-
-            if (gameFinished) {
+            gameNotFinished = theGame.resolveSudoku();
+            if (gameNotFinished) {
                 SudokuBoard sudokuBoard = new SudokuBoard();
                 EasySet easySet = new EasySet();
                 easySet.setEasyBoard(sudokuBoard);
                 System.out.println(sudokuBoard);
-                EnterCoordinates enter = new EnterCoordinates();
-                AddElement addElement = new AddElement(sudokuBoard);
-                EndGameControler endGameControler = new EndGameControler(sudokuBoard);
-
-                while (!endGameControler.isEndGame()) {
-                    enter.nextmove(sudokuBoard);
-                    addElement.add(enter.getX(), enter.getY(), enter.getValue());
-                    System.out.println(sudokuBoard);
-                    System.out.println(enter.getValue() + " was added to board.");
+                UserDialogue dialogueManager = new UserDialogue();
+                ElementAdder elementAdder = new ElementAdder(sudokuBoard);
+                EndGameChecker endGameChecker = new EndGameChecker(sudokuBoard);
+                while (!endGameChecker.isEndGame()) {
+                    if (dialogueManager.getNextMove()) {
+                        elementAdder.add(dialogueManager.getX(), dialogueManager.getY(), dialogueManager.getValue());
+                        System.out.println(sudokuBoard);
+                        dialogueManager.displayLastMove();
+                    } else {
+                        new SudokuResolve(sudokuBoard).resolve();
+                        System.out.println(sudokuBoard);
+                    }
                 }
             }
         }

@@ -9,12 +9,12 @@ public class SudokuTestSuite {
         //Given
         SudokuBoard board = new SudokuBoard();
         board.setEmptyBoard();
-        AddElement addElement = new AddElement(board);
-        addElement.add(2, 2, 5);
+        ElementAdder elementAdder = new ElementAdder(board);
+        elementAdder.add(2, 2, 5);
 
-        EndGameControler endGameControler = new EndGameControler(board);
+        EndGameChecker endGameChecker = new EndGameChecker(board);
         //When
-        boolean endGame = endGameControler.isEndGame();
+        boolean endGame = endGameChecker.isEndGame();
 
         //Then
         Assert.assertEquals(false, endGame);

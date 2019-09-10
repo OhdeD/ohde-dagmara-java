@@ -5,10 +5,10 @@ import java.util.List;
 import java.util.Objects;
 import java.util.stream.Collectors;
 
-public class AddElement {
+public class ElementAdder {
     private SudokuBoard sudokuBoard;
 
-    public AddElement(SudokuBoard sudokuBoard) {
+    public ElementAdder(SudokuBoard sudokuBoard) {
         this.sudokuBoard = sudokuBoard;
     }
 

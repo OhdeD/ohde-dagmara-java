@@ -1,9 +1,9 @@
 package com.kodilla.sudoku;
 
-public class EndGameControler {
+public class EndGameChecker {
     private SudokuBoard board;
 
-    public EndGameControler(SudokuBoard board) {
+    public EndGameChecker(SudokuBoard board) {
         this.board = board;
     }
 
@@ -11,8 +11,8 @@ public class EndGameControler {
         boolean isEndGame = board.getBoard()
                 .stream()
                 .flatMap(e->e.getRow().stream())
-                .flatMap(e->e.getPossibilities().stream())
-                .allMatch(e-> e.equals(SudokuElement.EMPTY));
+               // .flatMap(e->e.getPossibilities().stream())
+                .allMatch(e-> e.getValue() != SudokuElement.EMPTY);
         return isEndGame;
     }
 }

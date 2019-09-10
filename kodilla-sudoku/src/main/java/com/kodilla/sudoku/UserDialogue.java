@@ -2,18 +2,18 @@ package com.kodilla.sudoku;
 
 import java.util.Scanner;
 
-public class EnterCoordinates {
+public class UserDialogue {
     private int x;
     private int y;
     private int value;
     Scanner scanner = new Scanner(System.in);
 
-    public void nextmove(SudokuBoard board) {
+    public boolean getNextMove() {
         System.out.println("Enter your next move:");
         String coordinates = scanner.nextLine();
+        boolean result;
         if (coordinates.equals("sudoku")) {
-            SudokuResolve resolve = new SudokuResolve(board);
-            resolve.resolve();
+            result = false;
         } else {
             try {
                 x = Integer.parseInt(coordinates.substring(0, 1));
@@ -22,8 +22,9 @@ public class EnterCoordinates {
             } catch (NumberFormatException e) {
                 System.out.println("Something went wrong, try again");
             }
+            result = true;
         }
-
+        return result;
     }
 
     public int getX() {
@@ -36,5 +37,9 @@ public class EnterCoordinates {
 
     public int getValue() {
         return value;
+    }
+
+    public void displayLastMove() {
+        System.out.println(getValue() + " was added to board.");
     }
 }
