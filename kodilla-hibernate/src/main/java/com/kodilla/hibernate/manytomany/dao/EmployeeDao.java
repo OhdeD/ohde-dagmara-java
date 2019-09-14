@@ -10,6 +10,7 @@ import java.util.List;
 
 @Transactional
 @Repository
-public interface CompanyDao extends CrudRepository<Company, Integer> {
-    public List<Company> findByFirstThreeLettersOfCompanyName(@Param("SEARCHINGNAME") String searchingName);
+public interface EmployeeDao extends CrudRepository<Employee, Integer> {
+    public List<Employee> findByLastName(@Param("LASTNAME") String lastname);
+
 }
