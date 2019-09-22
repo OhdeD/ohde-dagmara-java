@@ -9,6 +9,8 @@ public class Responder {
                 " \n - Rock: press \"1\", " +
                 "\n - Paper: press \"2\", " +
                 "\n - Scissors: press \"3\". " +
+                "\n - Spock: press \"4\". " +
+                "\n - Lizzard: press \"5\". " +
                 "\n \n To escape press \"8\"." +
                 " \n For restart press \"9\". " +
                 "To check current score press \"0\". " +
@@ -60,6 +62,7 @@ public class Responder {
     public void  paperBeatsRock(int computerMove){
         System.out.println("I gave " + computerMove + ". Paper beats the Rock!");
     }
+
     public void  rockBeatsScissors(int computerMove){
         System.out.println("I gived " + computerMove + ". Rock beats the Scissors! :)");
     }
@@ -68,9 +71,38 @@ public class Responder {
         System.out.println("I gaved " + computerMove + ". Scissors beats the Paper!");
     }
 
+    public void  lizzardBeatsSpock(int computerMove){
+        System.out.println("I gave " + computerMove + ". Lizzard beats the Spock!");
+    }
+
+    public void  rockBeatsLizzard(int computerMove){
+        System.out.println("I gave " + computerMove + ". Rock beats the Lizzard!");
+    }
+
+    public void  scissorsBeatsLizzard(int computerMove){
+        System.out.println("I gave " + computerMove + ". Scissors beats the Lizzard!");
+    }
+
+    public void  spockBeatsScissors(int computerMove){
+        System.out.println("I gave " + computerMove + ". Spock beats the Scissors!");
+    }
+
+    public void  lizzardBeatsPaper(int computerMove){
+        System.out.println("I gave " + computerMove + ". Lizzard beats the Paper!");
+    }
+
+    public void  paperBeatsSpock(int computerMove){
+        System.out.println("I gave " + computerMove + ". Paper beats the Spock!");
+    }
+
+    public void  spockBeatsRock(int computerMove){
+        System.out.println("I gave " + computerMove + ". Spock beats the Rock!");
+    }
+
     public void uWon(){
         System.out.println("Congratulations! You won this time!");
     }
+
     public void compWon(){
         System.out.println("This round is mine");
     }
@@ -89,6 +121,7 @@ public class Responder {
     public void backToGame(){
         System.out.println("Ok. Let's go back to our game.");
     }
+
     public void currentScore(int playerScore, int computerScore, int wonRounds){
         System.out.println("Current game: player: " + playerScore + " computer: " + computerScore + ". We play until " + wonRounds + ".");
     }
@@ -99,6 +132,7 @@ public class Responder {
     public void restart(){
         System.out.println("Ok. Let's start again.");
     }
+
     public  void newGame(){
         System.out.println("Do you wanna play again? Press \"1\" for \"YES\" or \"2\" for \"NO\".");
     }

@@ -35,8 +35,4 @@ public class EndGameProcesser {
     public boolean isEndGame() {
         return endGame;
     }
-
-    public int getWonRounds() {
-        return wonRounds;
-    }
 }

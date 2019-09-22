@@ -5,7 +5,6 @@ import java.util.Scanner;
 
 public class RpsRunner {
     public static void main(String[] args) {
-        Random game = new Random();
 
         Responder responder = new Responder();
         GameWinnerChecker winner = new GameWinnerChecker(responder);
@@ -17,6 +16,7 @@ public class RpsRunner {
         responder.howManyRounds(name);
         int wonRounds = scanner.nextInt();
 
+        ComputerMove randomMove = new ComputerMove();
         GameProcessor processor = new GameProcessor(responder, winner, wonRounds);
         Quitter quitter = new Quitter(responder, scanner);
         Restarter restarter = new Restarter(responder, scanner, processor);
@@ -28,9 +28,9 @@ public class RpsRunner {
         boolean end = false;
         while (!end) {
             int playerMove = scanner.nextInt();
-            int computerMove = game.nextInt(2) + 1;
+            int computerMove = randomMove.generateMove(playerMove);
 
-            if (playerMove < 4 && playerMove != 0) {
+            if (playerMove < 6 && playerMove != 0) {
                 endGame = processor.process(playerMove, computerMove);
             } else if (playerMove == 8) {
                 end = quitter.quit(processor.getPlayerScore(), processor.getComputerScore(), processor.getWonRounds());
@@ -43,7 +43,6 @@ public class RpsRunner {
             if (endGame) {
                 end = endGameProcessor.end(name);
                 endGame = endGameProcessor.isEndGame();
-                wonRounds = endGameProcessor.getWonRounds();
             }
             if (!end) {
                 responder.nextMoveRequest();
