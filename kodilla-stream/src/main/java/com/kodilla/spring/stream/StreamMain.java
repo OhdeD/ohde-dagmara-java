@@ -1,5 +1,6 @@
 package com.kodilla.spring.stream;
 
+import com.kodilla.spring.stream.beautifier.PoemBeautifier;
 import com.kodilla.spring.stream.forumUser.Forum;
 import com.kodilla.spring.stream.forumUser.ForumUser;
 import java.time.LocalDate;
@@ -21,5 +22,11 @@ public class StreamMain {
         filtredUsers.entrySet().stream()
                 .map(entry -> entry.getKey() + "~~" + entry.getValue())
                 .forEach(System.out::println);
+
+
+        PoemBeautifier poemBeautifier = new PoemBeautifier();
+        poemBeautifier.beautify("dagmara", (a)->a.toUpperCase());
+        poemBeautifier.beautify("dagmara", (a)->"..." + a.toUpperCase() + "...");
+
     }
 }

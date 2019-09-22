@@ -32,16 +32,4 @@ public class SudokuBoard extends Prototype {
     public List<SudokuRow> getBoard() {
         return board;
     }
-
-    public SudokuBoard deepCopy() throws CloneNotSupportedException{
-        SudokuBoard clonedSudokuBoard = (SudokuBoard)super.clone();
-        clonedSudokuBoard.board = new ArrayList<>();
-        for (SudokuRow rows : board){
-            SudokuRow clonedRow = new SudokuRow();
-            for (SudokuElement element : rows.getRow()){
-                clonedRow.addElement(new SudokuElement(element.getValue()));
-            }
-        }
-        return clonedSudokuBoard;
-    }
 }
