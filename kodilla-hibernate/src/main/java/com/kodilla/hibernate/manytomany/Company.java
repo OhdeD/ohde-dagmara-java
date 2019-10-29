@@ -5,12 +5,17 @@ import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
 import java.util.List;
 
-
+@NamedNativeQueries({
 @NamedNativeQuery(
         name = "Company.findByFirstThreeLettersOfCompanyName",
         query = "select * from COMPANIES where left(COMPANY_NAME,3) = :SEARCHINGNAME",
         resultClass = Company.class
-)
+),
+@NamedNativeQuery(
+        name = "Company.findByAnyString",
+        query = "select * from COMPANIES where (COMPANY_NAME LIKE :NAME  )",
+        resultClass = Company.class
+)})
 @Entity
 @Table(name = "COMPANIES")
 public class Company {

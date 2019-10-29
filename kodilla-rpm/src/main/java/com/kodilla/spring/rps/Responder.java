@@ -134,7 +134,7 @@ public class Responder {
     }
 
     public  void newGame(){
-        System.out.println("Do you wanna play again? Press \"1\" for \"YES\" or \"2\" for \"NO\".");
+        System.out.println("Do you wanna play again? Press \"y\" for \"YES\" or \"n\" for \"NO\".");
     }
 
     public void bye(){

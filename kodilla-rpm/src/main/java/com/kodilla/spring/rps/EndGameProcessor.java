@@ -2,14 +2,14 @@ package com.kodilla.spring.rps;
 
 import java.util.Scanner;
 
-public class EndGameProcesser {
+public class EndGameProcessor {
     private Scanner scanner;
     private Responder responder;
     private GameProcessor processor;
     private boolean endGame;
     private int wonRounds;
 
-    public EndGameProcesser(Scanner scanner, Responder responder, GameProcessor processor) {
+    public EndGameProcessor(Scanner scanner, Responder responder, GameProcessor processor) {
         this.scanner = scanner;
         this.responder = responder;
         this.processor = processor;
@@ -17,8 +17,8 @@ public class EndGameProcesser {
 
     public boolean end (String name) {
         responder.newGame();
-        int playAgain = scanner.nextInt();
-        if (playAgain == 1) {
+        String playAgain = scanner.nextLine();
+        if (playAgain == "y") {
             endGame = false;
             processor.setPlayerScore(0);
             processor.setComputerScore(0);

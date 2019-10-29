@@ -1,6 +1,5 @@
 package com.kodilla.spring.rps;
 
-import java.util.Random;
 import java.util.Scanner;
 
 public class RpsRunner {
@@ -20,7 +19,7 @@ public class RpsRunner {
         GameProcessor processor = new GameProcessor(responder, winner, wonRounds);
         Quitter quitter = new Quitter(responder, scanner);
         Restarter restarter = new Restarter(responder, scanner, processor);
-        EndGameProcesser endGameProcessor = new EndGameProcesser(scanner, responder, processor);
+        EndGameProcessor endGameProcessor = new EndGameProcessor(scanner, responder, processor);
 
         responder.showRules();
         responder.askForFirstMove();
