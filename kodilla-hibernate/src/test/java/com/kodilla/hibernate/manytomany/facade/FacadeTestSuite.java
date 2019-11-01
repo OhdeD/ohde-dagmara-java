@@ -22,7 +22,6 @@ public class FacadeTestSuite {
     @Test
     public void testFindByFirstThreeLettersOfCompanyName() {
         //Given
-
         Company softwareMachine = new Company("Software Machine");
         Company dataMaesters = new Company("Data Maesters");
         Company greyMatter = new Company("Grey Matter");

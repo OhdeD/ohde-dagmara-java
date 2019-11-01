@@ -18,11 +18,12 @@ public class Facade {
     private EmployeeDao employeeDao;
 
     public List<Company> findCompanyByAnyString(String companyName) {
-        List<Company>companies = companyDao.findByAnyString(companyName);
+        List<Company> companies = companyDao.findByAnyString(companyName);
         return companies;
     }
+
     public List<Employee> findEmployeeByAnyString(String name) {
-        List<Employee> employee= employeeDao.findByAnyString(name);
+        List<Employee> employee = employeeDao.findByAnyString(name);
         return employee;
     }
 
