@@ -83,7 +83,7 @@ public class CompanyDaoTestSuite {
         List<Employee> thisEmployee = employeeDao.findByLastName(lastname);
 
         //Then
-        Assert.assertEquals(2, thisEmployee.size());
+        Assert.assertEquals(1, thisEmployee.size());
 
         //CleanUp
         employeeDao.deleteAll();

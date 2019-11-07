@@ -6,6 +6,8 @@ import com.kodilla.kodillapatterns2.facade.api.OrderFacade;
 import com.kodilla.kodillapatterns2.facade.api.OrderProcessingException;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
@@ -19,6 +21,7 @@ public class ShopServiceTestSuite {
     private ShopService shopService;
     @Autowired
     private OrderFacade orderFacade;
+    private static final Logger LOGGER = LoggerFactory.getLogger(ShopServiceTestSuite.class);
 
     @Test
     public void testShopServiceSubmitOrder() {
@@ -71,8 +74,10 @@ public class ShopServiceTestSuite {
         order.addItem(new ItemDto(216L, 1));
         order.addItem(new ItemDto(25L, 1));
         order.addItem(new ItemDto(11L, 3));
+        LOGGER.info("Starting processing new Order");
+        //When
         try{
-            orderFacade.processOrder(order, 1L);
+            orderFacade.processOrder(order, 3L);
         }catch (OrderProcessingException e){
             //business exception - should be handled in real application
         }
