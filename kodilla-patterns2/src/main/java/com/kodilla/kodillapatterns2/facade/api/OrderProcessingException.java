@@ -6,7 +6,7 @@ public class OrderProcessingException extends Exception {
     public static String ERR_VERIFICATION_ERROR = "Veryfication error";
     public static String ERR_SUBMITTING_ERROR = "Cannot submit order";
 
-    public OrderProcessingException(String message){
+    public OrderProcessingException(String message) {
         super(message);
     }
 
