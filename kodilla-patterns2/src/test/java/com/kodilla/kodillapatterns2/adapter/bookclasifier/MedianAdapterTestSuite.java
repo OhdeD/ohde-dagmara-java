@@ -15,7 +15,6 @@ public class MedianAdapterTestSuite {
         books.add(new Book("Dostojewski", "Zbrodnia i kara", 1985, "AOB232315"));
         books.add(new Book("Rowling", "Harry Potter", 2010, "BAO151548"));
         books.add(new Book("Matrin", "Game of Thrones", 2015, "WAR1472582"));
-        books.add(new Book("AAAA", "abc", 1926, "12345JAKA54"));
         MedianAdapter adapter = new MedianAdapter();
         System.out.println(books);
         //When
@@ -23,7 +22,7 @@ public class MedianAdapterTestSuite {
         System.out.println();
         System.out.println(median);
         //Then
-        Assert.assertEquals(1997, median);
+        Assert.assertEquals(2010, median);
 
     }
 }
