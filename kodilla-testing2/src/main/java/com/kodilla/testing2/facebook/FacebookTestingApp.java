@@ -31,6 +31,5 @@ public class FacebookTestingApp {
 
         WebElement input = driver.findElement(By.xpath(WOMAN));
         input.click();
-
     }
 }
